@@ -8,7 +8,7 @@
 import Foundation
 
 enum StoryboardName: String {
-    case gamesList = "gamesList"
-    
-    
+    case mainTabBar = "MainTabBar"
+    case gamesList = "GamesList"
+    case favoritesList = "FavoritesList"
 }

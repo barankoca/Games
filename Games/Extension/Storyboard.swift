@@ -8,7 +8,9 @@
 import UIKit
 
 extension UIStoryboard {
-    static func load<T: UIViewController>(_ storyboardName: StoryboardName) -> T {
-        return UIStoryboard(name: storyboardName.rawValue, bundle: Bundle.main).instantiateInitialViewController() as! T
+    static func load<T: UIViewController>(_ name: StoryboardName) -> T {
+        
+        return UIStoryboard(name: name.rawValue,
+                            bundle: Bundle.main).instantiateInitialViewController() as! T
     }
 }
