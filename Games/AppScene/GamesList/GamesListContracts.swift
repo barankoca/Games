@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+protocol GamesListVMProtocol: class {
+    var delegate: GamesListVMOutputDelegate? { get set }
+    func load(pageNumber: Int)
+}
+
+protocol GamesListVMOutputDelegate: class {
+    func updateItems(_ presentations: [GamesListPresentation], pageNumber: Int)
+}

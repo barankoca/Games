@@ -12,8 +12,8 @@ final class MainRouter {
     
     func start() {
         let vc = MainTabBarBuilder.make()
-        navigationController.pushViewController(vc, animated: true)
         navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.pushViewController(vc, animated: true)
         app.window.rootViewController = navigationController
     }
 }
