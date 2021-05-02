@@ -132,13 +132,6 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
-		12F2EFC6263E838E00B65B91 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		12F2EFD2263E976E00B65B91 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,17 +151,9 @@
 		12F2EFEA263EC64F00B65B91 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				12F2EFEB263EC65700B65B91 /* Navigation */,
 				12F2EFB9263DF97700B65B91 /* Constants.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		12F2EFEB263EC65700B65B91 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		12FC5E76263D7733002C6597 = {
@@ -199,7 +184,6 @@
 				12FC5EC0263D7820002C6597 /* AppScene */,
 				12FC5EF0263D8357002C6597 /* Extension */,
 				12FC5EFA263D877B002C6597 /* Model */,
-				12F2EFC6263E838E00B65B91 /* Protocols */,
 				12FC5EBF263D7819002C6597 /* Resources */,
 				12FC5EF9263D8390002C6597 /* Network */,
 				12FC5EC4263D784C002C6597 /* SupportingFiles */,
