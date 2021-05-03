@@ -27,8 +27,11 @@ final class GamesListVC: UIViewController {
     
     private var items: [GamesListPresentation] = []
     
+    private var timer: Timer?
+    
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.delegate = self
         
@@ -47,8 +50,23 @@ final class GamesListVC: UIViewController {
     private func loadMore(pageNumber: Int,
                           searchText: String?) {
         isLoading = true
-        vm.load(pageNumber: pageNumber,
-                searchText: searchText)
+        vm.load(pageNumber: self.pageNumber,
+                searchText: self.searchText)
+    }
+    
+    private func setTimer() {
+        DispatchQueue.main.async {
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 5,
+                                         target: self,
+                                         selector: #selector(self.loadWithTimer(_:)),
+                                         userInfo: nil,
+                                         repeats: false)
+        }
+    }
+    
+    @objc private func loadWithTimer(_ sender: Timer) {
+        vm.load(pageNumber: pageNumber, searchText: searchText)
     }
 }
 
@@ -58,10 +76,14 @@ extension GamesListVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !isLoading,
-           indexPath.row == items.count - 1 {
-            pageNumber += 1
-            self.loadMore(pageNumber: pageNumber, searchText: searchText)
+        print("items \(items.count) index \(indexPath.row)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if indexPath.row == self.items.count - 1,
+               tableView.visibleCells.contains(cell),
+               !self.isLoading {
+                self.pageNumber += 1
+                self.loadMore(pageNumber: self.pageNumber, searchText: self.searchText)
+            }
         }
     }
     
@@ -116,20 +138,11 @@ extension GamesListVC: UISearchBarDelegate, UISearchControllerDelegate {
             self.searchText = trimmedString
             self.items = []
             self.pageNumber = 1
-            vm.load(pageNumber: self.pageNumber, searchText: self.searchText)
-            tableView.reloadData()
+            setTimer()
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchText = nil
-        self.items = []
-        self.pageNumber = 1
-        vm.load(pageNumber: self.pageNumber, searchText: nil)
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.isLoading = false
         self.searchText = nil
         self.items = []
         self.pageNumber = 1

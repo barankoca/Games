@@ -23,65 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BCCE971F-35F1-40F2-93DE-4BA77EA1581D"
+            uuid = "9F8C5CA7-4349-4D6C-8991-E8A7093AC845"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Games/AppScene/GamesList/GamesListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GamesList/GamesListVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "load(pageNumber:searchText:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E - fe348d30403c1326"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Games.GamesListVM.load(pageNumber: Swift.Int, searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GamesList/GamesListVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E - 118ef35f05f1f9e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GamesResult, Swift.Error&gt;) -&gt; () in Games.GamesListVM.load(pageNumber: Swift.Int, searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GamesList/GamesListVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,6 +15,7 @@ final class GamesListVM: GamesListVMProtocol {
     var gamePresentations = [GamesListPresentation]()
     
     func load(pageNumber: Int, searchText: String?) {
+        print("Load page \(pageNumber), query \(searchText ?? "nil")")
         service.getGames(pageNumber: pageNumber, searchText: searchText, completion: { [weak self] result in
             guard let self = self else { return }
             
