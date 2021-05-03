@@ -58,8 +58,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lG-SW-BSU">
-                                                    <rect key="frame" x="227" y="84" width="23.5" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="82" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lG-SW-BSU">
+                                                    <rect key="frame" x="227" y="84" width="167" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="7Ht-gN-5hH"/>
                                                     </constraints>
@@ -78,9 +78,9 @@
                                                 <constraint firstItem="5lG-SW-BSU" firstAttribute="bottom" secondItem="fSv-wn-XvE" secondAttribute="bottom" id="VCS-Dm-3AF"/>
                                                 <constraint firstItem="5lG-SW-BSU" firstAttribute="leading" secondItem="fSv-wn-XvE" secondAttribute="trailing" constant="2" id="Vvu-gM-GCh"/>
                                                 <constraint firstItem="fSv-wn-XvE" firstAttribute="leading" secondItem="rBv-Hz-EL3" secondAttribute="trailing" constant="16" id="WIr-Iq-1GN"/>
+                                                <constraint firstAttribute="trailing" secondItem="5lG-SW-BSU" secondAttribute="trailing" constant="20" id="anR-wa-waa"/>
                                                 <constraint firstAttribute="bottom" secondItem="Cgq-cS-NIO" secondAttribute="bottom" constant="12" id="dII-yx-AGX"/>
                                                 <constraint firstAttribute="trailing" secondItem="Cgq-cS-NIO" secondAttribute="trailing" constant="16" id="fdE-Hd-EMn"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="5lG-SW-BSU" secondAttribute="trailing" constant="143" id="jiV-mQ-iuv"/>
                                                 <constraint firstItem="x1G-KA-6er" firstAttribute="leading" secondItem="rBv-Hz-EL3" secondAttribute="trailing" constant="16" id="lvG-HT-Lho"/>
                                                 <constraint firstItem="x1G-KA-6er" firstAttribute="top" secondItem="EfU-Ij-LMX" secondAttribute="top" constant="16" id="rko-Mm-ljZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="rBv-Hz-EL3" secondAttribute="bottom" constant="16" id="uqE-TZ-41D"/>
@@ -99,18 +99,24 @@
                                     <outlet property="delegate" destination="UZv-hs-F72" id="78u-gb-mfQ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qXB-VQ-Jir">
+                                <rect key="frame" x="188.5" y="432" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Jj-WO-5YY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5ac-rC-quL" firstAttribute="leading" secondItem="5Jj-WO-5YY" secondAttribute="leading" id="7pc-AS-JK9"/>
                             <constraint firstItem="5Jj-WO-5YY" firstAttribute="trailing" secondItem="5ac-rC-quL" secondAttribute="trailing" id="8Fa-HJ-mRW"/>
+                            <constraint firstItem="qXB-VQ-Jir" firstAttribute="centerY" secondItem="5Jj-WO-5YY" secondAttribute="centerY" id="KFZ-wc-ggM"/>
                             <constraint firstItem="5ac-rC-quL" firstAttribute="top" secondItem="5Jj-WO-5YY" secondAttribute="top" id="Yeu-X0-dfm"/>
                             <constraint firstItem="5Jj-WO-5YY" firstAttribute="bottom" secondItem="5ac-rC-quL" secondAttribute="bottom" id="dDg-By-hDm"/>
+                            <constraint firstItem="qXB-VQ-Jir" firstAttribute="centerX" secondItem="5Jj-WO-5YY" secondAttribute="centerX" id="xwK-O8-o5q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iqp-1b-Sgn"/>
                     <connections>
+                        <outlet property="indicator" destination="qXB-VQ-Jir" id="Z0X-j9-D4H"/>
                         <outlet property="tableView" destination="5ac-rC-quL" id="WQ2-dS-fn2"/>
                     </connections>
                 </viewController>

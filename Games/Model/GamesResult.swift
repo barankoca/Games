@@ -20,7 +20,7 @@ struct GamesData: Decodable {
     let name: String?
     let backgroundImage: String?
     let metacritic: Int?
-    let genres: [Genres]?
+    let genres: [Genres]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -32,5 +32,5 @@ struct GamesData: Decodable {
 }
 
 struct Genres: Decodable {
-    let name: String?
+    let name: String
 }

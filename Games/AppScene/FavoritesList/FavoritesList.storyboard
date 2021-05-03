@@ -29,7 +29,7 @@
         <scene sceneID="kII-5P-rCS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Mw-tq-e5Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" image="FavouriteIconPassive" selectedImage="FavouriteIconActive" id="xga-KJ-nYJ"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="FavouriteIconActive" selectedImage="FavouriteIconPassive" id="xga-KJ-nYJ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1P1-Qh-Ypi">

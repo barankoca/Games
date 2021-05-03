@@ -19,7 +19,6 @@ final class MainTabBarController: UITabBarController {
         let gamesListVC = UIStoryboard.load(.gamesList)
         let favoritesListVC = UIStoryboard.load(.favoritesList)
         
-        
         self.setViewControllers([gamesListVC,
                                  favoritesListVC], animated: false)
     }

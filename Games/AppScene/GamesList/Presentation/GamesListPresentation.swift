@@ -20,12 +20,6 @@ struct GamesListPresentation {
     
     var image: String? {
         return model.backgroundImage
-//        DispatchQueue.global().async{
-//            guard let imageString = model.backgroundImage,
-//                  let url = URL(string: imageString),
-//                  let data = try? Data(contentsOf: url) else { return nil }
-//            return UIImage(data: data)
-//        }
     }
     
     var name: String? {
@@ -34,5 +28,10 @@ struct GamesListPresentation {
     
     var metacriticScore: Int? {
         return model.metacritic ?? nil
+    }
+    
+    var genres: [String] {
+        let genreNames: [String] = model.genres.map({ ($0.name) })
+        return genreNames
     }
 }

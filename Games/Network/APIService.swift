@@ -7,45 +7,78 @@
 
 import Foundation
 
-
-
 final class APIService {
     
     
-    func getGames(completion: @escaping ([GamesData], Error?) -> Void) {
+    func getGames(pageNumber: Int, completion: @escaping (APIResult<GamesResult, Error>) -> Void) {
         
         guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
         urlComponents.queryItems = [
             URLQueryItem(name: APIKey.key, value: APIValue.key),
             URLQueryItem(name: APIKey.pageLimit, value: APIValue.pageLimit),
-            URLQueryItem(name: APIKey.page, value: "1")
+            URLQueryItem(name: APIKey.page, value: String(pageNumber))
         ]
         
         guard let url = urlComponents.url  else { return }
-        
-            URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
+        DispatchQueue.global(qos: .userInteractive).async {
+            let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
                 guard let data = data,
                       error == nil
                 else {
+                    completion(APIResult.failure(error!))
                     return
                 }
-
+                
                 var result: GamesResult?
                 
                 do {
                     result = try JSONDecoder().decode(GamesResult.self, from: data)
                     
                 } catch{
-                    print("error")
-                }
-                
-                guard let finalResult = result else {
+                    completion(APIResult.failure(error))
                     return
                 }
-                completion(finalResult.games, error)
                 
-                
-            }).resume()
+                guard let finalResult = result else { return }
+                completion(APIResult.success(finalResult))
+            })
             
+            task.resume()
         }
+    }
+    
+    func getDetail(id: Int, completion: @escaping (APIResult<GameDetailModel, Error>) -> Void) {
+        
+        guard var urlcomponents = URLComponents(string: Url.sourceURL) else { return }
+        urlcomponents.queryItems = [URLQueryItem(name: APIKey.key, value: APIValue.key)]
+        
+        let urlWithPath = urlcomponents.url?.appendingPathComponent(String(id))
+        
+        guard let url = urlWithPath else { return }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard let data = data,
+                      error == nil
+                else {
+                    completion(APIResult.failure(error!))
+                    return
+                }
+                
+                var result: GameDetailModel?
+                
+                do {
+                    result = try JSONDecoder().decode(GameDetailModel.self, from: data)
+                } catch {
+                    completion(APIResult.failure(error))
+                    return
+                }
+                
+                guard let finalResult = result else { return }
+                
+                completion(APIResult.success(finalResult))
+            }
+            task.resume()
+        }
+    }
 }

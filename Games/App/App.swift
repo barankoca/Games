@@ -16,10 +16,9 @@ final class App {
         return window
     }()
     
-    let container = MainContainer()
-    
     func start() {
-        container.router.start()
+        let vc = MainTabBarBuilder.make()
+        app.window.rootViewController = vc
         window.makeKeyAndVisible()
     }
 }

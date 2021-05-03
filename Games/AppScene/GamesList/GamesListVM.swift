@@ -15,13 +15,17 @@ final class GamesListVM: GamesListVMProtocol {
     var gamePresentations = [GamesListPresentation]()
     
     func load(pageNumber: Int) {
-        service.getGames(completion: { [weak self] (games, error) in
+        service.getGames(pageNumber: pageNumber, completion: { [weak self] result in
             guard let self = self else { return }
             
-            self.gamePresentations = games.map({GamesListPresentation(model: $0)})
-            
-            self.delegate?.updateItems(self.gamePresentations, pageNumber: pageNumber)
-            
+            switch result {
+            case let .success(response):
+                self.gamePresentations = response.games.map({GamesListPresentation(model: $0)})
+                self.delegate?.updateItems(self.gamePresentations, pageNumber: pageNumber)
+                
+            case .failure(_):
+                self.delegate?.updateFailure()
+            }
         })
     }
     
