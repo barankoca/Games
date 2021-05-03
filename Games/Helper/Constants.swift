@@ -15,6 +15,7 @@ enum APIKey {
     static let key = "key"
     static let pageLimit = "page_size"
     static let page = "page"
+    static let search = "search"
 }
 
 enum APIValue {

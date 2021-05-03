@@ -23,225 +23,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1A4E3B5D-6749-48A3-A7DA-3B0D87828AF3"
+            uuid = "BCCE971F-35F1-40F2-93DE-4BA77EA1581D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GameDetail/GameDetailVM.swift"
+            filePath = "Games/AppScene/GamesList/GamesListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "load()"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games/AppScene/GamesList/GamesListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "load(pageNumber:searchText:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1A4E3B5D-6749-48A3-A7DA-3B0D87828AF3 - 2b32568d150e4321"
+                  uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E - fe348d30403c1326"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GameDetailModel, Swift.Error&gt;) -&gt; () in Games.GameDetailVM.load() -&gt; ()"
+                  symbolName = "Games.GamesListVM.load(pageNumber: Swift.Int, searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
                   moduleName = "Games"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
+                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GamesList/GamesListVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
-                  uuid = "1A4E3B5D-6749-48A3-A7DA-3B0D87828AF3 - 2b32568d150e4321"
+                  uuid = "F8AF5E77-8573-4C82-9EC1-90282EB08D4E - 118ef35f05f1f9e2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GameDetailModel, Swift.Error&gt;) -&gt; () in Games.GameDetailVM.load() -&gt; ()"
+                  symbolName = "closure #1 (Games.APIResult&lt;Games.GamesResult, Swift.Error&gt;) -&gt; () in Games.GamesListVM.load(pageNumber: Swift.Int, searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
                   moduleName = "Games"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
+                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GamesList/GamesListVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EA7D1D94-899C-4FC2-8195-F6A2C838FF0D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GameDetail/GameDetailVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "load()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9EA4B9D-D8F7-4716-9A02-15DBDAED3CAD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GameDetail/GameDetailVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "load()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E9EA4B9D-D8F7-4716-9A02-15DBDAED3CAD - 681d4332429fd182"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Games.GameDetailVM.load() -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "E9EA4B9D-D8F7-4716-9A02-15DBDAED3CAD - 2b32568d150e4321"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GameDetailModel, Swift.Error&gt;) -&gt; () in Games.GameDetailVM.load() -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "78056806-DA9B-49BD-8982-9DF2CE0EA9DC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GameDetail/GameDetailVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "load()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "78056806-DA9B-49BD-8982-9DF2CE0EA9DC - 2b32568d150e4321"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GameDetailModel, Swift.Error&gt;) -&gt; () in Games.GameDetailVM.load() -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "78056806-DA9B-49BD-8982-9DF2CE0EA9DC - 2b32568d150e4321"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Games.APIResult&lt;Games.GameDetailModel, Swift.Error&gt;) -&gt; () in Games.GameDetailVM.load() -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/AppScene/GameDetail/GameDetailVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D56B771-33FD-4D6E-A54F-18D36C004C93"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Network/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getDetail(id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E8EB786-DEE3-4F19-89C0-DE74BF6DB9D6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Network/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getDetail(id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FB4CD0C1-A8DF-46F4-90E5-0F02B889DBE2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Network/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getDetail(id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "48555D33-7294-42CF-A2CD-7A6404468AB5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Network/APIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "getDetail(id:completion:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

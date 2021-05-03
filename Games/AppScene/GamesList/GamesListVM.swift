@@ -14,8 +14,8 @@ final class GamesListVM: GamesListVMProtocol {
     
     var gamePresentations = [GamesListPresentation]()
     
-    func load(pageNumber: Int) {
-        service.getGames(pageNumber: pageNumber, completion: { [weak self] result in
+    func load(pageNumber: Int, searchText: String?) {
+        service.getGames(pageNumber: pageNumber, searchText: searchText, completion: { [weak self] result in
             guard let self = self else { return }
             
             switch result {

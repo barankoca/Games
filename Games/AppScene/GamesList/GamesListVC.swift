@@ -18,7 +18,7 @@ final class GamesListVC: UIViewController {
 
     
     private var pageNumber: Int = 1
-    private var limit: Int = 10
+    private var searchText: String?
     private var isLoading: Bool = false {
         didSet {
             isLoading ? indicator.startAnimating() : indicator.stopAnimating()
@@ -26,18 +26,29 @@ final class GamesListVC: UIViewController {
     }
     
     private var items: [GamesListPresentation] = []
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.delegate = self
+        
+        return searchController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         vm.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "GAMES"
-        vm.load(pageNumber: pageNumber)
+        navigationItem.title = "Games"
+        navigationItem.searchController = searchController
+        vm.load(pageNumber: pageNumber, searchText: nil)
     }
     
-    private func loadMore(pageNumber: Int) {
+    private func loadMore(pageNumber: Int,
+                          searchText: String?) {
         isLoading = true
-        vm.load(pageNumber: pageNumber)
+        vm.load(pageNumber: pageNumber,
+                searchText: searchText)
     }
 }
 
@@ -50,7 +61,7 @@ extension GamesListVC: UITableViewDelegate {
         if !isLoading,
            indexPath.row == items.count - 1 {
             pageNumber += 1
-            self.loadMore(pageNumber: pageNumber)
+            self.loadMore(pageNumber: pageNumber, searchText: searchText)
         }
     }
     
@@ -94,5 +105,34 @@ extension GamesListVC: GamesListVMOutputDelegate {
             
             self.isLoading = false
         }
+    }
+}
+
+extension GamesListVC: UISearchBarDelegate, UISearchControllerDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count >= 3 {
+            self.isLoading = true
+            let trimmedString = searchText.trimmingCharacters(in: .whitespaces)
+            self.searchText = trimmedString
+            self.items = []
+            self.pageNumber = 1
+            vm.load(pageNumber: self.pageNumber, searchText: self.searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchText = nil
+        self.items = []
+        self.pageNumber = 1
+        vm.load(pageNumber: self.pageNumber, searchText: nil)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.isLoading = false
+        self.searchText = nil
+        self.items = []
+        self.pageNumber = 1
+        vm.load(pageNumber: self.pageNumber, searchText: nil)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 final class APIService {
     
     
-    func getGames(pageNumber: Int, completion: @escaping (APIResult<GamesResult, Error>) -> Void) {
+    func getGames(pageNumber: Int, searchText: String?, completion: @escaping (APIResult<GamesResult, Error>) -> Void) {
         
         guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
         urlComponents.queryItems = [
@@ -18,6 +18,11 @@ final class APIService {
             URLQueryItem(name: APIKey.pageLimit, value: APIValue.pageLimit),
             URLQueryItem(name: APIKey.page, value: String(pageNumber))
         ]
+        
+        if let searchText = searchText {
+            let searchQueryItem = URLQueryItem(name: APIKey.search, value: searchText)
+            urlComponents.queryItems?.append(searchQueryItem)
+        }
         
         guard let url = urlComponents.url  else { return }
         DispatchQueue.global(qos: .userInteractive).async {

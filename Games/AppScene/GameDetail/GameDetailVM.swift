@@ -20,7 +20,6 @@ final class GameDetailVM: GameDetailVMProtocol {
     
     func load() {
         service.getDetail(id: self.id) {(result) in
-            
             switch result {
             case let .success(response):
                 let presentation = GameDetailPresentation(response)

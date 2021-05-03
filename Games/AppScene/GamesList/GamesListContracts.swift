@@ -9,7 +9,8 @@ import Foundation
 
 protocol GamesListVMProtocol: class {
     var delegate: GamesListVMOutputDelegate? {get set}
-    func load(pageNumber: Int)
+    func load(pageNumber: Int,
+              searchText: String?)
 }
 
 protocol GamesListVMOutputDelegate: class {
