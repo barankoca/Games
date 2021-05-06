@@ -10,7 +10,9 @@ import Foundation
 
 protocol GameDetailVMProtocol: class {
     var delegate: GameDetailVMOutputDelegate? { get set }
+    func isFavourite() -> Bool
     func load()
+    func saveFavourite(completion: @escaping () -> Void)
 }
 
 protocol GameDetailVMOutputDelegate: class {

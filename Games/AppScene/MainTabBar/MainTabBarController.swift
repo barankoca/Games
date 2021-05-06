@@ -16,10 +16,19 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func loadTabs() {
-        let gamesListVC = UIStoryboard.load(.gamesList)
-        let favoritesListVC = UIStoryboard.load(.favoritesList)
+        let gamesListVC = GamesListBuilder.make()
+        gamesListVC.tabBarItem = UITabBarItem(title: "Games",
+                                              image: UIImage(named: "ControllerIconPassive"),
+                                              selectedImage: UIImage(named: "ControllerIconActive"))
+        let gamesListNavigationController = UINavigationController(rootViewController: gamesListVC)
         
-        self.setViewControllers([gamesListVC,
-                                 favoritesListVC], animated: false)
+        let favoritesListVC = FavouritesListBuilder.make()
+        favoritesListVC.tabBarItem = UITabBarItem(title: "Favourites",
+                                                  image: UIImage(named: "FavouriteIconPassive"),
+                                                  selectedImage: UIImage(named: "FavouriteIconActive"))
+        let favouritesListNavigationController = UINavigationController(rootViewController: favoritesListVC)
+        
+        self.setViewControllers([gamesListNavigationController,
+                                 favouritesListNavigationController], animated: false)
     }
 }

@@ -29,8 +29,4 @@ final class GamesListVM: GamesListVMProtocol {
             }
         })
     }
-    
-    
-    
-    
 }

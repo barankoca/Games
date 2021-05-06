@@ -15,7 +15,7 @@ struct GamesResult: Decodable {
     }
 }
 
-struct GamesData: Decodable {
+struct GamesData: Codable {
     let id: Int
     let name: String?
     let backgroundImage: String?
@@ -31,6 +31,6 @@ struct GamesData: Decodable {
     }
 }
 
-struct Genres: Decodable {
+struct Genres: Codable {
     let name: String
 }

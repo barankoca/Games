@@ -8,9 +8,9 @@
 import UIKit
 
 final class GameDetailBuilder {
-    static func makeWith(_ id: Int) -> GameDetailVC {
+    static func makeWith(_ item: GamesListPresentation) -> GameDetailVC {
         let vc = UIStoryboard.load(.gameDetail) as! GameDetailVC
-        vc.vm = GameDetailVM(id)
+        vc.vm = GameDetailVM(item)
         return vc
     }
 }

@@ -14,7 +14,10 @@ final class GameDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: vm.isFavourite() ? "Favourited" : "Favourite",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(favourite))
         vm.load()
     }
     
@@ -29,6 +32,21 @@ final class GameDetailVC: UIViewController {
     var vm: GameDetailVMProtocol! {
         didSet {
             vm.delegate = self
+        }
+    }
+    
+    @objc private func favourite() {
+        if vm.isFavourite() {
+            let alert = UIAlertController(title: "", message: "This game has already been favourited.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        } else {
+            vm.saveFavourite() {
+                DispatchQueue.main.async {
+                    self.navigationItem.rightBarButtonItem?.title = self.vm.isFavourite() ? "Favourited" : "Favourite"
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 }
@@ -99,6 +117,4 @@ extension GameDetailVC: GameDetailVMOutputDelegate {
             self.present(alert, animated: true)
         }
     }
-    
-    
 }

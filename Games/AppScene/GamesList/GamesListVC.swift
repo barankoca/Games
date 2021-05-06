@@ -12,7 +12,11 @@ final class GamesListVC: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     
-    var vm: GamesListVMProtocol = GamesListVM()
+    var vm: GamesListVMProtocol! {
+        didSet {
+            vm.delegate = self
+        }
+    }
     
     private let reuseId = "GamesCell"
 
@@ -89,8 +93,8 @@ extension GamesListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let itemId = items[indexPath.row].id
-        let vc = GameDetailBuilder.makeWith(itemId)
+        let item = items[indexPath.row]
+        let vc = GameDetailBuilder.makeWith(item)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -98,6 +102,12 @@ extension GamesListVC: UITableViewDelegate {
 
 extension GamesListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items.count == 0 {
+            self.tableView.setEmptyMessage("No game has been searched.")
+        } else {
+            self.tableView.restore()
+        }
+        
         return items.count
     }
 
@@ -132,11 +142,11 @@ extension GamesListVC: GamesListVMOutputDelegate {
 
 extension GamesListVC: UISearchBarDelegate, UISearchControllerDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.items = []
         if searchText.count >= 3 {
             self.isLoading = true
             let trimmedString = searchText.trimmingCharacters(in: .whitespaces)
             self.searchText = trimmedString
-            self.items = []
             self.pageNumber = 1
             setTimer()
         }
@@ -147,5 +157,10 @@ extension GamesListVC: UISearchBarDelegate, UISearchControllerDelegate {
         self.items = []
         self.pageNumber = 1
         vm.load(pageNumber: self.pageNumber, searchText: nil)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        items = []
+        tableView.reloadData()
     }
 }

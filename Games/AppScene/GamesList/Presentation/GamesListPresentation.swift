@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct GamesListPresentation {
+struct GamesListPresentation: Codable {
     var model: GamesData
     
     init(model: GamesData) {
