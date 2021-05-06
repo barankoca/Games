@@ -28,7 +28,7 @@ final class GameDetailImageCell: UITableViewCell {
                     }
                 }
             } else {
-                self.gameImageView.image = nil
+                self.gameImageView.image = UIImage(named: "Placeholder")
             }
             
             self.gameNameLabel.text = item?.name

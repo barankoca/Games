@@ -37,7 +37,7 @@ final class FavouritesListCell: UITableViewCell {
                     }
                 }
             } else {
-                self.gameImageView.image = nil
+                self.gameImageView.image = UIImage(named: "Placeholder")
             }
             
             gameNameLabel.text = item.name

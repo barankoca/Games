@@ -61,16 +61,15 @@ extension FavoritesListVC: UITableViewDataSource {
                 let alert = UIAlertController(title: "Are you sure?",
                                               message: "You are about to delete favourited game. Do you want to continue?",
                                               preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel",
+                                              style: .cancel))
                 alert.addAction(UIAlertAction(title: "OK",
                                               style: .destructive,
                                               handler: { [weak self] _ in
                                                 guard let self = self,
                                                       let itemId = self.items[indexPath.row]?.id else { return }
                                                 self.vm.removeFromFavourites(itemId)
-                                                self.tableView.reloadData()
                                               }))
-                alert.addAction(UIAlertAction(title: "Cancel",
-                                              style: .cancel))
                 self.present(alert, animated: true)
             }
         }

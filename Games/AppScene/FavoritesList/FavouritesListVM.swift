@@ -15,6 +15,8 @@ final class FavouritesListVM: FavouritesListVMProtocol {
 
     func removeFromFavourites(_ itemId: Int) {
         favouriteManager.removeFavourite(itemId)
+        let items = favouriteManager.getFavourites()
+        self.delegate?.updateItems(items)
     }
     
     func getFavourites() {
