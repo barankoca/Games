@@ -11,7 +11,7 @@ final class FavouriteManager {
     
     private let userDefaults = UserDefaults.standard
     
-    func saveFavourites(_ items: [GamesListPresentation?]) {
+    private func saveFavourites(_ items: [GamesListPresentation?]) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(items) {
             userDefaults.set(encoded, forKey: "SavedGames")
@@ -33,6 +33,14 @@ final class FavouriteManager {
     func isFavourite(_ itemId: Int) -> Bool {
         let favouriteId = getFavourites().compactMap({ $0?.id })
         return favouriteId.contains(itemId)
+    }
+    
+    func appendNewFavorurites(_ item: GamesListPresentation?) {
+        var favourites = getFavourites()
+        guard !favourites.contains(where: {$0?.id == item?.id}) else { return }
+        
+        favourites.append(item)
+        saveFavourites(favourites)
     }
     
     func removeFavourite(_ itemId: Int) {

@@ -45,8 +45,8 @@ final class GamesListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vm.delegate = self
+        self.navigationItem.title = "Games"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Games"
         navigationItem.searchController = searchController
         vm.load(pageNumber: pageNumber, searchText: nil)
     }
@@ -97,6 +97,10 @@ extension GamesListVC: UITableViewDelegate {
         let vc = GameDetailBuilder.makeWith(item)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchController.searchBar.endEditing(true)
     }
 }
 

@@ -21,10 +21,11 @@ final class FavoritesListVC: UIViewController {
     
     private let reuseId = "FavouritesCell"
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        vm.getFavourites()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Favourites"
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

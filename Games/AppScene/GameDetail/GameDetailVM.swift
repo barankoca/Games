@@ -36,7 +36,7 @@ final class GameDetailVM: GameDetailVMProtocol {
     }
     
     func saveFavourite(completion: @escaping () -> Void) {
-        favouriteManager.saveFavourites([self.item])
+        favouriteManager.appendNewFavorurites(item)
         completion()
     }
 }
