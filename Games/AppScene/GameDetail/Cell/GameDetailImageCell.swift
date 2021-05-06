@@ -14,13 +14,16 @@ final class GameDetailImageCell: UITableViewCell {
     
     var item: GameDetailPresentation? {
         didSet {
-            if let urlString = item?.image,
-               let url = URL(string: urlString) {
+            if let urlString = item?.image {
                 DispatchQueue.global(qos: .userInteractive).async {
-                    UIImage.getImage(url: url) { [weak self] image in
-                        guard let self = self else { return }
+                    APIService.shared.downloadImageWith(urlString: urlString) { [weak self] (imageData, error) in
+                        guard let self = self,
+                              let currentStr = self.item?.image,
+                              currentStr == urlString,
+                              let imageData = imageData,
+                              let gameImage = UIImage(data: imageData) else { return }
                         DispatchQueue.main.async {
-                            self.gameImageView.image = image
+                            self.gameImageView.image = gameImage
                         }
                     }
                 }

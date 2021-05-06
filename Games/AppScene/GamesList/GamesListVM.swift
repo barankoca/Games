@@ -10,13 +10,13 @@ import Foundation
 final class GamesListVM: GamesListVMProtocol {
     weak var delegate: GamesListVMOutputDelegate?
     
-    private let service = APIService()
+//    private let service = APIService()
     
     var gamePresentations = [GamesListPresentation]()
     
     func load(pageNumber: Int, searchText: String?) {
         print("Load page \(pageNumber), query \(searchText ?? "nil")")
-        service.getGames(pageNumber: pageNumber, searchText: searchText, completion: { [weak self] result in
+        APIService.shared.getGames(pageNumber: pageNumber, searchText: searchText, completion: { [weak self] result in
             guard let self = self else { return }
             
             switch result {

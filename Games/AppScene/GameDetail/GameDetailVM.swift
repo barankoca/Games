@@ -12,7 +12,6 @@ final class GameDetailVM: GameDetailVMProtocol {
     
     private let item: GamesListPresentation
     
-    private let service = APIService()
     private let favouriteManager = FavouriteManager()
     
     init(_ item: GamesListPresentation) {
@@ -20,7 +19,7 @@ final class GameDetailVM: GameDetailVMProtocol {
     }
     
     func load() {
-        service.getDetail(id: item.id) {(result) in
+        APIService.shared.getDetail(id: item.id) {(result) in
             switch result {
             case let .success(response):
                 let presentation = GameDetailPresentation(response)

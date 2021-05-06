@@ -23,7 +23,6 @@
 		127622DA2640370800027D7A /* GameDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127622D92640370800027D7A /* GameDetailPresentation.swift */; };
 		127622E52640417800027D7A /* GameDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127622E42640417800027D7A /* GameDetailImageCell.swift */; };
 		127622EA2640418700027D7A /* GameDetailDescCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127622E92640418700027D7A /* GameDetailDescCell.swift */; };
-		127622F4264042E800027D7A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127622F3264042E800027D7A /* UIImage.swift */; };
 		127622FC26404EB600027D7A /* GameDetailVisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127622FB26404EB600027D7A /* GameDetailVisitCell.swift */; };
 		127F2DAB263DAA3500FE1B62 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127F2DAA263DAA3500FE1B62 /* MainTabBarController.swift */; };
 		127F2DB5263DAB8600FE1B62 /* FavoritesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127F2DB4263DAB8600FE1B62 /* FavoritesList.storyboard */; };
@@ -84,7 +83,6 @@
 		127622D92640370800027D7A /* GameDetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailPresentation.swift; sourceTree = "<group>"; };
 		127622E42640417800027D7A /* GameDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailImageCell.swift; sourceTree = "<group>"; };
 		127622E92640418700027D7A /* GameDetailDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailDescCell.swift; sourceTree = "<group>"; };
-		127622F3264042E800027D7A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		127622FB26404EB600027D7A /* GameDetailVisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailVisitCell.swift; sourceTree = "<group>"; };
 		127F2DAA263DAA3500FE1B62 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		127F2DB4263DAB8600FE1B62 /* FavoritesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesList.storyboard; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				12FC5EF1263D8370002C6597 /* Storyboard.swift */,
-				127622F3264042E800027D7A /* UIImage.swift */,
 				121EC55D2642D62D00C71DA4 /* TableView.swift */,
 			);
 			path = Extension;
@@ -528,7 +525,6 @@
 				127622B5263FFB8C00027D7A /* GameDetailBuilder.swift in Sources */,
 				127622AA263FF3C600027D7A /* APIResponse.swift in Sources */,
 				12F2EFD5263E980900B65B91 /* GamesListPresentation.swift in Sources */,
-				127622F4264042E800027D7A /* UIImage.swift in Sources */,
 				127622D12640044700027D7A /* GameDetailModel.swift in Sources */,
 				127622E52640417800027D7A /* GameDetailImageCell.swift in Sources */,
 				127622EA2640418700027D7A /* GameDetailDescCell.swift in Sources */,

@@ -22,15 +22,16 @@ final class GamesListCell: UITableViewCell {
     
     var item: GamesListPresentation! {
         didSet {
-            if let urlString = item.image,
-               let url = URL(string: urlString) {
+            if let urlString = item.image {
                 GamesListCell.imageQueue.async {
-                    UIImage.getImage(url: url) { [weak self] image in
+                    APIService.shared.downloadImageWith(urlString: urlString) { [weak self] (imageData, error) in
                         guard let self = self,
-                              let currentStr = self.item.image,
-                              currentStr == urlString else { return }
+                              let imageData = imageData,
+                              let currentStr = self.item?.image,
+                              currentStr == urlString,
+                              let gameImage = UIImage(data: imageData) else { return }
                         DispatchQueue.main.async {
-                            self.gameImageView.image = image
+                            self.gameImageView.image = gameImage
                         }
                     }
                 }
