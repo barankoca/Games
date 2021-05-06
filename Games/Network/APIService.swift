@@ -29,7 +29,7 @@ final class APIService {
         
         guard let url = urlComponents.url  else { return }
         DispatchQueue.global(qos: .userInteractive).async {
-            let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
+            let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
                 guard let data = data,
                       error == nil
                 else {

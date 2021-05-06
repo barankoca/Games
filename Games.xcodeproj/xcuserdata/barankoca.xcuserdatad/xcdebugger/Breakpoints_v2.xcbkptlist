@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7FCD84A-576D-4607-AFA4-DA0CC81E2097"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/AppScene/GameDetail/GameDetailVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "saveFavourite(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9E42CADE-D4E7-47D8-B953-20EAE1255BDB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -33,102 +17,6 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "isFavourite()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B08B2C3A-CBCE-4259-8F29-63F0796A8340"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Manager/FavouriteManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "appendNewFavorurites(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B08B2C3A-CBCE-4259-8F29-63F0796A8340 - 3ce00b8572c96166"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Games.FavouriteManager.appendNewFavorurites(Swift.Optional&lt;Games.GamesListPresentation&gt;) -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/Manager/FavouriteManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "184">
-               </Location>
-               <Location
-                  uuid = "B08B2C3A-CBCE-4259-8F29-63F0796A8340 - 7f7509b2d404afb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Games.GamesListPresentation&gt;) -&gt; Swift.Bool in Games.FavouriteManager.appendNewFavorurites(Swift.Optional&lt;Games.GamesListPresentation&gt;) -&gt; ()"
-                  moduleName = "Games"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barankoca/Developer/Games/Games/Manager/FavouriteManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8F16A511-8F1A-4D18-8E93-6CC28A024BD0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Manager/FavouriteManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "appendNewFavorurites(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B9D3F08-03E6-4AD6-AC77-C7E411699F1F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Manager/FavouriteManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "appendNewFavorurites(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "37B7FA27-D4FB-40C7-B85A-2F319421D63E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games/Manager/FavouriteManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "saveFavourites(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

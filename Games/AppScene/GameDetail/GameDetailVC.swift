@@ -37,7 +37,9 @@ final class GameDetailVC: UIViewController {
     
     @objc private func favourite() {
         if vm.isFavourite() {
-            let alert = UIAlertController(title: "", message: "This game has already been favourited.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "",
+                                          message: "This game has already been favourited.",
+                                          preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
         } else {
@@ -57,6 +59,20 @@ extension GameDetailVC: UITableViewDelegate {
         case 0: return 291
         case 1: return 142
         case 2, 3: return 54
+        default:
+            fatalError("Unexpected cell")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 2:
+            guard let url = item?.redditUrl else { return }
+            UIApplication.shared.open(url)
+        case 3:
+            guard let url = item?.websiteUrl else { return }
+            UIApplication.shared.open(url)
         default:
             fatalError("Unexpected cell")
         }

@@ -10,8 +10,6 @@ import Foundation
 final class GamesListVM: GamesListVMProtocol {
     weak var delegate: GamesListVMOutputDelegate?
     
-//    private let service = APIService()
-    
     var gamePresentations = [GamesListPresentation]()
     
     func load(pageNumber: Int, searchText: String?) {
