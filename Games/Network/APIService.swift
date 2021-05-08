@@ -10,8 +10,6 @@ import Foundation
 final class APIService {
     
     static var shared = APIService()
-    private var cacheData = NSCache<NSString, NSData>()
-    
     
     func getGames(pageNumber: Int, searchText: String?, completion: @escaping (APIResult<GamesResult, Error>) -> Void) {
         
@@ -91,10 +89,6 @@ final class APIService {
     }
     
     private func download(imageURL: URL, completion: @escaping (Data?, Error?) -> (Void)) {
-      if let imageData = cacheData.object(forKey: imageURL.absoluteString as NSString) {
-        completion(imageData as Data, nil)
-        return
-      }
       
         let downloadTask = URLSession.shared.downloadTask(with: imageURL) { url, response, error in
         if let error = error {
@@ -109,7 +103,6 @@ final class APIService {
         
         do {
           let data = try Data(contentsOf: url)
-          self.cacheData.setObject(data as NSData, forKey: imageURL.absoluteString as NSString)
           completion(data, nil)
         } catch let error {
           completion(nil, error)
