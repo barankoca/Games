@@ -1,6 +1,6 @@
 # Games
 
-- I decided to use MVVM desing pattern. First reason is MVVM can reduce and seperate business logic and view. Provides clean code and easy management.
+- I decided to use MVVM desing pattern. First reason is MVVM can reduce complexity and seperate business logic and view. Provides clean code and easy management.
 
 
 - If  I had more time I would like to work on image caching and error handlings.
